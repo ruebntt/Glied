@@ -1,7 +1,7 @@
 import sys
 
-def read_circle(file_path):
-    with open(file_path, 'r') as f:
+def read_circle('https://docs.google.com/document/d/1hi5h5p3QcPlL9IHbVNHst6-B0Y1kFssH/edit'):
+    with open('https://docs.google.com/document/d/1hi5h5p3QcPlL9IHbVNHst6-B0Y1kFssH/edit', 'r') as f:
         line = f.readline().strip()
         parts = line.split()
         if len(parts) != 3:
@@ -11,9 +11,9 @@ def read_circle(file_path):
         radius = float(parts[2])
     return x_center, y_center, radius
 
-def read_points(file_path):
+def read_points('https://docs.google.com/document/d/1hi5h5p3QcPlL9IHbVNHst6-B0Y1kFssH/edit'):
     points = []
-    with open(file_path, 'r') as f:
+    with open('https://docs.google.com/document/d/1hi5h5p3QcPlL9IHbVNHst6-B0Y1kFssH/edit', 'r') as f:
         for line in f:
             line = line.strip()
             if line:
