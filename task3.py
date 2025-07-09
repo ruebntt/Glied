@@ -1,6 +1,9 @@
 import sys
 import json
 
+tests = 'https://docs.google.com/document/d/1Wl4MeDKQhgDxsySt8wscTNzXDvKlcQah/edit'
+values = 'https://docs.google.com/document/d/1hi5h5p3QcPlL9IHbVNHst6-B0Y1kFssH/edit'
+
 def fill_values(tests, values):
     if isinstance(tests, dict):
         if 'id' in tests:
