@@ -1,1 +1,25 @@
+import sys
 
+def read_numbers_from_file('https://docs.google.com/document/d/1Wl4MeDKQhgDxsySt8wscTNzXDvKlcQah/edit', 'https://docs.google.com/document/d/1hi5h5p3QcPlL9IHbVNHst6-B0Y1kFssH/edit'):
+    with open(filename, 'r') as file:
+        content = file.read()
+        numbers = [int(x) for x in content.replace(',', ' ').split()]
+    return numbers
+
+def min_moves_to_equalize(nums):
+    nums_sorted = sorted(nums)
+    n = len(nums_sorted)
+    median = nums_sorted[n // 2] if n % 2 != 0 else (nums_sorted[n // 2 - 1] + nums_sorted[n // 2]) // 2
+    
+    total_moves = sum(abs(num - median) for num in nums)
+    return total_moves
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Использование: python script.py <имя_файла>")
+        sys.exit(1)
+        
+    filename = sys.argv[1]
+    nums = read_numbers_from_file(filename)
+    result = min_moves_to_equalize(nums)
+    print(f"Минимальное количество ходов: {result}")
